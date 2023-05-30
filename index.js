@@ -3,7 +3,6 @@ import _ from 'lodash';
 const contentToObject = (content) => {
   const current = content.split('\r\n').filter((el) => el !== '');
   const rep = / /gi;
-  const array = [100, 'huy']
   const keys = current[0].replace(rep, '_').split(',');
   const object = current.slice(1).map((el) => {
     const values = el.split(',');
@@ -21,7 +20,7 @@ function countOfCities(obj) {
 }
 
 function namesOfCities(obj) {
-  const cities = _.uniq(obj.map(({City}) => City)).sort();
+  const cities = _.uniq(obj.map(({ City }) => City)).sort();
 
   return `Cities: ${cities.join(', ')}`;
 }
