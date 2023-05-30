@@ -1,8 +1,8 @@
 import { beforeEach, test, expect } from '@jest/globals';
 
 import { execFileSync } from 'child_process';
-import { fileURLToPath } from "node:url";
-import path from "node:path";
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -18,14 +18,14 @@ beforeEach(() => {
     ['__fixtures__/weather1.csv'],
     options,
   );
-  rows1 = result1.trim().split('\n')
+  rows1 = result1.trim().split('\n');
 
   const result2 = execFileSync(
     'bin/weather.js',
     ['__fixtures__/weather2.csv'],
     options,
   );
-  rows2 = result2.trim().split('\n')
+  rows2 = result2.trim().split('\n');
 });
 
 test('step1', () => {
